@@ -32,7 +32,7 @@ gym_members_project/
 ## Methods Used
 
 ### Preprocessing
-- Label encoding of categorical variables (including Gender).
+- Label encoding of categorical variables (including `Gender`).
 - Standardization of numeric features.
 - IQR-based outlier detection/removal (per-gender bounds by default).
 
@@ -56,6 +56,7 @@ gym_members_project/
 - Silhouette-based heatmaps across PCA dimensions and cluster counts
 - Gender distribution by cluster table
 - PCA loadings and feature-direction summaries
+
 
 ---
 
