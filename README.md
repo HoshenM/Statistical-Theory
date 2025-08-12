@@ -62,7 +62,7 @@ gym_members_project/
 
 ## Setup
 
-1) Create a virtual environment (recommended)  
+### 1) **Create a virtual environment (recommended)**
 ```bash
 python -m venv venv
 # macOS/Linux:
@@ -71,13 +71,14 @@ source venv/bin/activate
 venv\Scripts\activate
 ```
 
-2) Install dependencies  
+### 2) **Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-3) Place your dataset  
+### 3) **Place your dataset**
 Ensure `gym_members_exercise_tracking.csv` is located at the project root.
+
 
 
 ---
