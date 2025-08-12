@@ -6,23 +6,26 @@ This project applies **statistical analysis**, **unsupervised learning**, and **
 ---
 
 ## Project Structure
+```
 gym_members_project/
-├── anomaly_detection.py # IQR-based outlier detection and cleaning
-├── analysis.py # Cluster–gender statistical tests and p-value table export
-├── clustering.py # Elbow + heatmaps for KMeans/DBSCAN/Agglomerative
-├── cluster_analysis.py # Gender-dominated clusters, MWU/Kruskal, feature-direction summary
-├── data_loader.py # Load CSV, encode labels, numeric encoding, scaling
-├── dimensionality_reduction.py # PCA→KMeans + UMAP visualizations
-├── gender_feature_stats.py # Mann–Whitney tests by gender
-├── gender_model_selection.py # Benchmark 6 classifiers; ROC comparison (fig6D)
-├── gender_prediction_model_analysis.py # RF: Behavioral vs Combined → confusions, importances, ROC CIs
-├── normality_tests.py # Shapiro–Wilk + Levene (standalone)
-├── PCA_loadings.py # PCA component loadings plots (fig5A/B)
-├── visualizations.py # PDF saving utility (creates figures_pdf/)
-├── pca and umap selection.py # Exploratory DR comparison (not used by main.py)
-├── main.py # Orchestrates the complete pipeline
-├── figures_pdf/ # Auto-created; all PDF outputs
-└── gym_members_exercise_tracking.csv # Input dataset (user-provided; not committed)
+├── anomaly_detection.py                 # IQR-based outlier detection and cleaning
+├── analysis.py                           # Cluster–gender statistical tests and p-value table export
+├── clustering.py                         # Elbow + heatmaps for KMeans/DBSCAN/Agglomerative
+├── cluster_analysis.py                   # Gender-dominated clusters, MWU/Kruskal, feature-direction summary
+├── data_loader.py                        # Load CSV, encode labels, numeric encoding, scaling
+├── dimensionality_reduction.py           # PCA→KMeans + UMAP visualizations
+├── gender_feature_stats.py               # Mann–Whitney tests by gender
+├── gender_model_selection.py             # Benchmark 6 classifiers; ROC comparison (fig6D)
+├── gender_prediction_model_analysis.py   # RF: Behavioral vs Combined → confusions, importances, ROC CIs
+├── normality_tests.py                    # Shapiro–Wilk + Levene (standalone)
+├── PCA_loadings.py                       # PCA component loadings plots (fig5A/B)
+├── visualizations.py                     # PDF saving utility (creates figures_pdf/)
+├── pca and umap selection.py             # Exploratory DR comparison (not used by main.py)
+├── main.py                               # Orchestrates the complete pipeline
+├── figures_pdf/                          # Auto-created; all PDF outputs
+└── gym_members_exercise_tracking.csv     # Input dataset (user-provided; not committed)
+```
+
 
 ---
 
@@ -86,12 +89,12 @@ python main.py
 ```
 
 This will:
-- Load and preprocess the dataset.
-- Remove outliers via IQR (per gender).
-- Print assumption checks (Shapiro–Wilk, Levene) and Mann–Whitney results.
-- Train and evaluate supervised models (RF detailed; 6-model benchmark).
-- Evaluate multiple clustering algorithms and parameter grids.
-- Export all figures/tables to `figures_pdf/`.
+1) Load and preprocess the dataset.
+2) Remove outliers via IQR (per gender).
+3) Print assumption checks (Shapiro–Wilk, Levene) and Mann–Whitney results.
+4) Train and evaluate supervised models (RF detailed; 6-model benchmark).
+5) Evaluate multiple clustering algorithms and parameter grids.
+6) Export all figures/tables to `figures_pdf/`.
 
 ---
 
