@@ -27,49 +27,64 @@ gym_members_project/
 ```
 
 
+
 ---
 
 ## Methods Used
 
-### Preprocessing
-- Label encoding of categorical variables (including `Gender`).
-- Standardization of numeric features.
-- IQR-based outlier detection/removal (per-gender bounds by default).
+### Preprocessing & EDA
+- Dropped missing values and inconsistent rows.  
+- Standardized continuous variables (**Age**, **BMI**, **Avg_Glucose**).  
+- One-hot encoded categorical variables (**Gender**, **SES**, **Smoking_Status**).  
+- **EDA outputs**:  
+  - **fig1.pdf**: feature distributions.  
+  - **fig2.pdf**: correlation heatmap & target associations.  
 
-### Statistical Tests
-- **Shapiro–Wilk** (normality per gender)
-- **Levene’s test** (variance equality across genders)
-- **Mann–Whitney U** (gender differences, nonparametric)
-- **Kruskal–Wallis H** (differences across clusters, nonparametric)
-- **ANOVA** (where assumptions permit)
+### Data Splitting & Scaling
+- **Stratified split**: 70% train, 15% validation, 15% test.  
+- **StandardScaler** fit only on train set, applied to val/test.  
+- Validation used for **early stopping** (when supported).  
 
-### Supervised Learning
-- **Random Forest** (detailed analysis: Behavioral vs Combined features)
-- Logistic Regression, SVM, KNN, Naive Bayes, MLP
+### Models
+Evaluated **14 supervised models**, including:  
+- Logistic Regression (L1, L2)  
+- Decision Tree, Random Forest  
+- Gradient Boosting, XGBoost, LightGBM, CatBoost  
+- SVM (linear, RBF)  
+- KNN, Naive Bayes  
+- Ensemble methods (Voting, Bagging, Boosting)  
 
-### Unsupervised Learning
-- Dimensionality reduction: PCA, UMAP
-- Clustering: KMeans, DBSCAN, Agglomerative
+### Hyperparameter Tuning
+- Used **GridSearchCV** and **Optuna** (5-fold time-aware CV).  
+- Optimized depth, learning rate, regularization, number of estimators, and class weights.  
 
-### Evaluation & Visualization
-- ROC, AUC, and bootstrap CIs (95%) for RF comparison
-- Silhouette-based heatmaps across PCA dimensions and cluster counts
-- Gender distribution by cluster table
-- PCA loadings and feature-direction summaries
+### Evaluation & Selection
+- Metrics: **Accuracy, Precision, Recall, F1, ROC-AUC, PR-AUC**.  
+- Figures:  
+  - **fig3.pdf**: model comparison & ranking.  
+  - **fig4.pdf**: confusion matrices, ROC & PR curves.  
 
+### Statistical Validation
+- Applied **significance tests** (paired t-test, McNemar’s test) to compare classifiers.  
+- Highlighted differences in recall/precision for minority class (**stroke cases**).  
+
+### Ensemble Methods
+- Implemented **Soft Voting Classifier** combining best 3 models.  
+- Ensemble improved overall AUC and recall compared to individual models.  
+- **fig5.pdf**: ensemble performance.  
 
 ---
 
 ## Setup
 
-### 1) **Create a virtual environment (recommended)**
+### 1) Create a virtual environment (optional)
 ```bash
 python -m venv venv
-# macOS/Linux:
-source venv/bin/activate
-# Windows:
+# Windows
 venv\Scripts\activate
-```
+# macOS / Linux
+source venv/bin/activate
+
 
 ### 2) **Install dependencies**
 ```bash
