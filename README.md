@@ -26,6 +26,7 @@ gym_members_project/
 └── gym_members_exercise_tracking.csv     # Input dataset (user-provided; not committed)
 ```
 
+---
 ## Methods Used
 Preprocessing
 
@@ -54,9 +55,10 @@ ROC, AUC, and bootstrap CIs (95%) for RF comparison
 Silhouette-based heatmaps across PCA dimensions and cluster counts
 Gender distribution by cluster table
 PCA loadings and feature-direction summaries
-
+```
+---
 ##  Setup
-1) Create a virtual environment (recommended)
+### 1) Create a virtual environment (recommended)
 python -m venv venv
 # macOS/Linux:
 source venv/bin/activate
