@@ -56,15 +56,16 @@ Silhouette-based heatmaps across PCA dimensions and cluster counts
 Gender distribution by cluster table
 PCA loadings and feature-direction summaries
 ```
----
+```
 ##  Setup
 ### 1) Create a virtual environment (recommended)
+```bash
 python -m venv venv
 # macOS/Linux:
 source venv/bin/activate
 # Windows:
 venv\Scripts\activate
-
+```
 
 ### 2) **Install dependencies**
 ```bash
